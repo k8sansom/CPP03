@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 # Target executable name
-NAME = fixed
+NAME = ClapTrap
 
 # Compiler and compiler flags
 CC = c++
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRCS =	main.cpp \
-		Fixed.cpp 
+		ClapTrap.cpp 
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
