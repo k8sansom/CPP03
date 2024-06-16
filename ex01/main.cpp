@@ -1,39 +1,39 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-    // Creating ClapTrap instances
-    ClapTrap defaultClapTrap;
-    ClapTrap namedClapTrap("Clappy");
+    // Test default constructor
+    ScavTrap scav1;
+    std::cout << std::endl;
+
+    // Test parameterized constructor
+    ScavTrap scav2("Scavvy");
+    std::cout << std::endl;
+
+    // Test copy constructor
+    ScavTrap scav3(scav2);
+    std::cout << std::endl;
+
+    // Test copy assignment operator
+    ScavTrap scav4;
+    scav4 = scav2;
+    std::cout << std::endl;
 
     // Test attack method
-    std::cout << "\n--- Testing Attack Method ---" << std::endl;
-    namedClapTrap.attack("Target A");
-    namedClapTrap.attack("Target B");
+    scav2.attack("Target1");
+    scav2.attack("Target2");
+    std::cout << std::endl;
 
-    // Test takeDamage method
-    std::cout << "\n--- Testing Take Damage Method ---" << std::endl;
-    namedClapTrap.takeDamage(5);
-    namedClapTrap.takeDamage(3); // This should bring health to 0
+    // Test guardGate method
+    scav2.guardGate();
+    scav2.guardGate();  // Should indicate that it is already guarding
+    std::cout << std::endl;
 
-    // Test beRepaired method
-    std::cout << "\n--- Testing Be Repaired Method ---" << std::endl;
-    namedClapTrap.beRepaired(3);
-    namedClapTrap.beRepaired(5); // Should not repair more than max health
-
-    // Test energy depletion
-    std::cout << "\n--- Testing Energy Depletion ---" << std::endl;
-    for (int i = 0; i < 12; ++i) {
-        namedClapTrap.attack("Target C");
+    // Test attacking until energy is depleted
+    for (int i = 0; i < 51; ++i) {
+        scav2.attack("Dummy");
     }
+    std::cout << std::endl;
 
-    // Test copying behavior
-    std::cout << "\n--- Testing Copy Constructor ---" << std::endl;
-    ClapTrap copyClapTrap(namedClapTrap);
-
-    std::cout << "\n--- Testing Copy Assignment Operator ---" << std::endl;
-    ClapTrap assignedClapTrap = defaultClapTrap;
-    assignedClapTrap = namedClapTrap;
-
-    // Destructor will be called automatically at the end of main
+    // Destructor will be called automatically for all objects
     return 0;
 }
