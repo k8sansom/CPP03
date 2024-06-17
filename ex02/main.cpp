@@ -1,39 +1,39 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    // Test default constructor
-    ScavTrap scav1;
+  // Test FragTrap default constructor
+    std::cout << "Creating FragTrap frag1 (default constructor):" << std::endl;
+    FragTrap frag1;
     std::cout << std::endl;
 
-    // Test parameterized constructor
-    ScavTrap scav2("Scavvy");
+    // Test FragTrap parameterized constructor
+    std::cout << "Creating FragTrap frag2 (parameterized constructor):" << std::endl;
+    FragTrap frag2("Fraggy");
     std::cout << std::endl;
 
-    // Test copy constructor
-    ScavTrap scav3(scav2);
+    // Test FragTrap copy constructor
+    std::cout << "Creating FragTrap frag3 (copy constructor):" << std::endl;
+    FragTrap frag3(frag2);
     std::cout << std::endl;
 
-    // Test copy assignment operator
-    ScavTrap scav4;
-    scav4 = scav2;
+    // Test FragTrap copy assignment operator
+    std::cout << "Assigning frag2 to frag4 (copy assignment operator):" << std::endl;
+    FragTrap frag4;
+    frag4 = frag2;
     std::cout << std::endl;
 
-    // Test attack method
-    scav2.attack("Target1");
-    scav2.attack("Target2");
+    // Test FragTrap attack method
+    std::cout << "Testing FragTrap attack method:" << std::endl;
+    frag2.attack("Target3");
+    frag2.attack("Target4");
     std::cout << std::endl;
 
-    // Test guardGate method
-    scav2.guardGate();
-    scav2.guardGate();  // Should indicate that it is already guarding
+    // Test FragTrap highFivesGuys method
+    std::cout << "Testing FragTrap highFivesGuys method:" << std::endl;
+    frag2.highFivesGuys();
+    frag2.highFivesGuys();  // Should indicate that it is already requesting
     std::cout << std::endl;
 
-    // Test attacking until energy is depleted
-    for (int i = 0; i < 51; ++i) {
-        scav2.attack("Dummy");
-    }
-    std::cout << std::endl;
-
-    // Destructor will be called automatically for all objects
+    // Destructors will be called automatically for all objects
     return 0;
 }
