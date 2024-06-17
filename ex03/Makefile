@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 # Target executable name
-NAME = ScavTrap
+NAME = DiamondTrap
 
 # Compiler and compiler flags
 CC = c++
@@ -20,7 +20,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 # Source files
 SRCS =	main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp
+		FragTrap.cpp \
+		ScavTrap.cpp 
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
