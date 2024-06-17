@@ -1,39 +1,38 @@
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
-    // Test default constructor
-    ScavTrap scav1;
+    std::cout << "Creating DiamondTrap default instance" << std::endl;
+    DiamondTrap defaultTrap;
     std::cout << std::endl;
 
-    // Test parameterized constructor
-    ScavTrap scav2("Scavvy");
+    std::cout << "Creating DiamondTrap named instance 'Diamond'" << std::endl;
+    DiamondTrap namedTrap("Diamond");
     std::cout << std::endl;
 
-    // Test copy constructor
-    ScavTrap scav3(scav2);
+    std::cout << "Copy constructing DiamondTrap from namedTrap" << std::endl;
+    DiamondTrap copiedTrap(namedTrap);
     std::cout << std::endl;
 
-    // Test copy assignment operator
-    ScavTrap scav4;
-    scav4 = scav2;
+    std::cout << "Assigning defaultTrap to namedTrap" << std::endl;
+    defaultTrap = namedTrap;
     std::cout << std::endl;
 
-    // Test attack method
-    scav2.attack("Target1");
-    scav2.attack("Target2");
+    std::cout << "Testing attack method on namedTrap" << std::endl;
+    namedTrap.attack("target");
     std::cout << std::endl;
 
-    // Test guardGate method
-    scav2.guardGate();
-    scav2.guardGate();  // Should indicate that it is already guarding
+    std::cout << "Testing whoAmI method on namedTrap" << std::endl;
+    namedTrap.whoAmI();
     std::cout << std::endl;
 
-    // Test attacking until energy is depleted
-    for (int i = 0; i < 51; ++i) {
-        scav2.attack("Dummy");
-    }
+    std::cout << "Testing highFivesGuys method on namedTrap" << std::endl;
+    namedTrap.highFivesGuys();
     std::cout << std::endl;
 
-    // Destructor will be called automatically for all objects
+    std::cout << "Testing guardGate method on namedTrap" << std::endl;
+    namedTrap.guardGate();
+    std::cout << std::endl;
+
+    std::cout << "Exiting main, destructors will be called" << std::endl;
     return 0;
 }

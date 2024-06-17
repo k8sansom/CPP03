@@ -20,6 +20,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 # Source files
 SRCS =	main.cpp \
 		ClapTrap.cpp \
+		DiamondTrap.cpp \
 		FragTrap.cpp \
 		ScavTrap.cpp 
 
