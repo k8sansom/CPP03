@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap(), _guardGate(false) {
+ScavTrap::ScavTrap(): ClapTrap() {
     ScavTrap::_hit_points = 100;
     ScavTrap::_energy_points = 50;
     ScavTrap::_attack_damage = 20;
@@ -8,11 +8,10 @@ ScavTrap::ScavTrap(): ClapTrap(), _guardGate(false) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy) {
-    _guardGate = copy._guardGate;
     std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name), _guardGate(false) {
+ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
     ScavTrap::_hit_points = 100;
     ScavTrap::_energy_points = 50;
     ScavTrap::_attack_damage = 20;
@@ -25,7 +24,6 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src) {
 		_hit_points = src._hit_points;
 		_energy_points = src._energy_points;
 		_attack_damage = src._attack_damage;
-		_guardGate = src._guardGate;
 	}
 	return *this;
 }
@@ -45,10 +43,5 @@ void    ScavTrap::attack(const std::string &target) {
 }
 
 void    ScavTrap::guardGate() {
-	if (_guardGate == false) {
-		_guardGate = true;
-		std::cout << "ScavTrap " << _name << " is guarding the gate" << std::endl;
-	}
-	else
-		std::cout << "ScavTrap " << _name << " is already guarding the gate" << std::endl;
+	std::cout << "ScavTrap " << _name << " is guarding the gate" << std::endl;
 }

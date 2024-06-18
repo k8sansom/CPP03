@@ -22,9 +22,11 @@ int main() {
 	// c.takeDamage(10);
 	// c.beRepaired(3);
     for (int i = 0; i <= 51; ++i) {
-        a.attack("Target C");
+        c.attack("Target C");
     }
     d.guardGate();
-    d.guardGate();  // Should indicate that it is already guarding
+    a.guardGate();
+    b.guardGate();
+    c.guardGate();
     return 0;
 }

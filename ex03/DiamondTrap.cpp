@@ -3,18 +3,18 @@
 // Default constructor
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name") {
     this->_name = "default_Diamond";
-    this->_hit_points = FragTrap::_hit_points;
-	this->_attack_damage = FragTrap::_attack_damage;
-    this->_energy_points = FragTrap::_energy_points;
-    std::cout << "DiamondTrap default constructor called" << std::endl;
+    FragTrap::_hit_points = 100;
+    ScavTrap::_energy_points = 50;
+    FragTrap::_attack_damage = 30;
+    std::cout << "DiamondTrap default constructor called with " << _hit_points << " hit points, " << _energy_points << " energy points, and " << _attack_damage << " attack damage" << std::endl;
 }
 
 // Parameterized constructor
 DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name + "_clap_name"), _name(name) {
-    this->_hit_points = FragTrap::_hit_points;
-    this->_attack_damage = FragTrap::_attack_damage;
-    this->_energy_points = FragTrap::_energy_points;
-    std::cout << "DiamondTrap " << _name << " constructor called" << std::endl;
+    FragTrap::_hit_points = 100;
+    ScavTrap::_energy_points = 50;
+    FragTrap::_attack_damage = 30;
+    std::cout << "DiamondTrap " << _name << " constructor called with " <<_hit_points << " hit points, " <<_energy_points << " energy points, and " << _attack_damage << " attack damage" << std::endl;
 }
 
 // Copy constructor
