@@ -38,7 +38,7 @@ void    ScavTrap::attack(const std::string &target) {
 		std::cout << "ScavTrap " << _name << " attacks " << target << " causing " << _damage << " damage" << std::endl;
 		_energy--;
 	}
-	else if (_energy == 0)
+	else if (_energy <= 0)
 		std::cout << "ScavTrap " << _name << " can't attack because they don't have energy" << std::endl;
 	else
 		std::cout << "ScavTrap " << _name << " can't attack because they have no health" << std::endl;

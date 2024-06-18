@@ -12,9 +12,6 @@ class FragTrap: virtual public ClapTrap {
         virtual	~FragTrap();
 
         void highFivesGuys(void);
-
-    private:
-        bool    _highFive;
 };
 
 # endif

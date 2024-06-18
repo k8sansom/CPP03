@@ -1,39 +1,33 @@
 #include "ScavTrap.hpp"
 
 int main() {
-    // Test default constructor
-    ScavTrap scav1;
-    std::cout << std::endl;
+    ScavTrap a;
+	ScavTrap b("Scavvy");
+    ScavTrap c(b);
+    ScavTrap d;
+    d = c; //so it should be b
 
-    // Test parameterized constructor
-    ScavTrap scav2("Scavvy");
-    std::cout << std::endl;
 
-    // Test copy constructor
-    ScavTrap scav3(scav2);
-    std::cout << std::endl;
-
-    // Test copy assignment operator
-    ScavTrap scav4;
-    scav4 = scav2;
-    std::cout << std::endl;
-
-    // Test attack method
-    scav2.attack("Target1");
-    scav2.attack("Target2");
-    std::cout << std::endl;
-
-    // Test guardGate method
-    scav2.guardGate();
-    scav2.guardGate();  // Should indicate that it is already guarding
-    std::cout << std::endl;
-
-    // Test attacking until energy is depleted
-    for (int i = 0; i < 51; ++i) {
-        scav2.attack("Dummy");
+    a.attack("Target A");
+    b.attack("Target B");
+	c.attack("Target B");
+    a.takeDamage(5);
+	a.beRepaired(5);
+    // a.takeDamage(3);
+	// a.takeDamage(5);
+	// a.takeDamage(5);
+	// b.takeDamage(9);
+	// a.beRepaired(5);
+	// b.beRepaired(5);
+	// c.takeDamage(10);
+	// c.beRepaired(3);
+    for (int i = 0; i <= 51; ++i) {
+        a.attack("Target C");
     }
-    std::cout << std::endl;
-
-    // Destructor will be called automatically for all objects
+    d.guardGate();
+    d.guardGate();  // Should indicate that it is already guarding
+    for (int i = 0; i <= 51; ++i) {
+        d.attack("Dummy");
+    }
     return 0;
 }

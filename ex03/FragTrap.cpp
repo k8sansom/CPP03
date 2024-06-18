@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(): ClapTrap(), _highFive(false) {
+FragTrap::FragTrap(): ClapTrap() {
     _health = 100;
     _energy = 100;
     _damage = 30;
@@ -8,11 +8,10 @@ FragTrap::FragTrap(): ClapTrap(), _highFive(false) {
 }
 
 FragTrap::FragTrap(const FragTrap &copy): ClapTrap(copy) {
-    _highFive = copy._highFive;
     std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name): ClapTrap(name), _highFive(false) {
+FragTrap::FragTrap(std::string name): ClapTrap(name){
     _health = 100;
     _energy = 100;
     _damage = 30;
@@ -26,7 +25,6 @@ FragTrap &FragTrap::operator=(const FragTrap &src) {
 		_health = src._health;
 		_energy = src._energy;
 		_damage = src._damage;
-		_highFive = src._highFive;
 	}
 	return *this;
 }
@@ -36,10 +34,5 @@ FragTrap::~FragTrap() {
 }
 
 void    FragTrap::highFivesGuys() {
-	if (_highFive == false) {
-		_highFive = true;
-		std::cout << "FragTrap " << _name << " wants a high five" << std::endl;
-	}
-	else
-		std::cout << "FragTrap " << _name << " is already requesting a high five" << std::endl;
+	std::cout << "FragTrap " << _name << " wants a high five" << std::endl;
 }

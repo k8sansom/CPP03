@@ -2,38 +2,28 @@
 
 int main() {
     // Creating ClapTrap instances
-    ClapTrap defaultClapTrap;
-    ClapTrap namedClapTrap("Clappy");
+    ClapTrap a;
+    ClapTrap b("Clappy");
+	ClapTrap c("Show off");
+	//c = b;
 
-    // Test attack method
-    std::cout << "\n--- Testing Attack Method ---" << std::endl;
-    namedClapTrap.attack("Target A");
-    namedClapTrap.attack("Target B");
+    a.attack("Target A");
+    b.attack("Target B");
+	c.attack("Target B");
 
-    // Test takeDamage method
-    std::cout << "\n--- Testing Take Damage Method ---" << std::endl;
-    namedClapTrap.takeDamage(5);
-    namedClapTrap.takeDamage(3); // This should bring health to 0
+    a.takeDamage(5);
+	a.beRepaired(5);
+    a.takeDamage(3);
+	a.takeDamage(5);
+	a.takeDamage(5);
+	b.takeDamage(9);
+	a.beRepaired(5);
+	b.beRepaired(5);
+	c.takeDamage(10);
+	c.beRepaired(3);
 
-    // Test beRepaired method
-    std::cout << "\n--- Testing Be Repaired Method ---" << std::endl;
-    namedClapTrap.beRepaired(3);
-    namedClapTrap.beRepaired(5); // Should not repair more than max health
-
-    // Test energy depletion
-    std::cout << "\n--- Testing Energy Depletion ---" << std::endl;
-    for (int i = 0; i < 12; ++i) {
-        namedClapTrap.attack("Target C");
+    for (int i = 0; i < 10; ++i) {
+        b.attack("Target C");
     }
-
-    // Test copying behavior
-    std::cout << "\n--- Testing Copy Constructor ---" << std::endl;
-    ClapTrap copyClapTrap(namedClapTrap);
-
-    std::cout << "\n--- Testing Copy Assignment Operator ---" << std::endl;
-    ClapTrap assignedClapTrap = defaultClapTrap;
-    assignedClapTrap = namedClapTrap;
-
-    // Destructor will be called automatically at the end of main
     return 0;
 }
