@@ -1,19 +1,20 @@
 #include "DiamondTrap.hpp"
 
 // Default constructor
-DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap(), _name("default") {
-    DiamondTrap::_hit_points = FragTrap::_hit_points;
-	DiamondTrap::_attack_damage = FragTrap::_attack_damage;
-    DiamondTrap::_energy_points = ScavTrap::_energy_points;
-    std::cout << "DiamondTrap default constructor called with " << this->_hit_points << " hit points, " << this->_energy_points << " energy points, and " << FragTrap::_attack_damage << " attack damage" << std::endl;
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name") {
+    this->_name = "default_Diamond";
+    this->_hit_points = FragTrap::_hit_points;
+	this->_attack_damage = FragTrap::_attack_damage;
+    this->_energy_points = FragTrap::_energy_points;
+    std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 // Parameterized constructor
-DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap(), _name(name) {
-    DiamondTrap::_hit_points = FragTrap::_hit_points;
-    DiamondTrap::_energy_points = ScavTrap::_energy_points;
-    DiamondTrap::_attack_damage = FragTrap::_attack_damage;
-    std::cout << "DiamondTrap " << name << " constructor called with " << this->_hit_points << " hit points, " << this->_energy_points << " energy points, and " << FragTrap::_attack_damage << " attack damage" << std::endl;
+DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name + "_clap_name"), _name(name) {
+    this->_hit_points = FragTrap::_hit_points;
+    this->_attack_damage = FragTrap::_attack_damage;
+    this->_energy_points = FragTrap::_energy_points;
+    std::cout << "DiamondTrap " << _name << " constructor called" << std::endl;
 }
 
 // Copy constructor

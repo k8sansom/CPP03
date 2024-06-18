@@ -1,9 +1,9 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(): ClapTrap() {
-    FragTrap::_hit_points = 100;
-    FragTrap::_energy_points = 100;
-    FragTrap::_attack_damage = 30;
+    this->_hit_points = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
     std::cout << "FragTrap default constructor called" << std::endl;
 }
 

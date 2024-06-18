@@ -13,7 +13,7 @@
 # include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): _name("default"),  _hit_points(10), _energy_points(10), _attack_damage(0) {
-	std::cout << "ClapTrap default constructor called with " <<_hit_points << " hit points, " <<_energy_points << " energy points, and " << _attack_damage << " attack damage" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
