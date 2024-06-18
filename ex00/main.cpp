@@ -5,7 +5,7 @@ int main() {
     ClapTrap a;
     ClapTrap b("Clappy");
 	ClapTrap c("Show off");
-	//c = b;
+	c = b;
 
     a.attack("Target A");
     b.attack("Target B");

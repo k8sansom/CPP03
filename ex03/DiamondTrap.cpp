@@ -1,16 +1,16 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap(), _name("default") {
-	_health = FragTrap::_health;
-	_energy = ScavTrap::_energy;
-	_damage = FragTrap::_damage;
+	_hit_points = FragTrap::_hit_points;
+	_energy_points = ScavTrap::_energy_points;
+	_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap(), _name(name) {
-	_health = FragTrap::_health;
-	_energy = ScavTrap::_energy;
-	_damage = FragTrap::_damage;
+	_hit_points = FragTrap::_hit_points;
+	_energy_points = ScavTrap::_energy_points;
+	_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap "<< name << " constructor called" << std::endl;
 }
 
