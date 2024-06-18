@@ -26,8 +26,5 @@ int main() {
     }
     d.guardGate();
     d.guardGate();  // Should indicate that it is already guarding
-    for (int i = 0; i <= 51; ++i) {
-        d.attack("Dummy");
-    }
     return 0;
 }

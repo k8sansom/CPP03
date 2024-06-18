@@ -6,14 +6,14 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 14:17:58 by ksansom           #+#    #+#             */
-/*   Updated: 2024/06/18 11:53:15 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/06/18 12:28:13 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): _name("default"),  _hit_points(10), _energy_points(10), _attack_damage(0) {
-	std::cout << "ClapTrap default constructor called with " <<_hit_points << " hit points, " <<_energy_points << " energy points, and " << _attack_damage << " attack damage" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
@@ -33,7 +33,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src) {
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
-	std::cout << "ClapTrap name constructor for " << name << " called with " <<_hit_points << " hit points, " <<_energy_points << " energy points, and " << _attack_damage << " attack damage" << std::endl;
+	std::cout << "ClapTrap name constructor for " << name << " called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {

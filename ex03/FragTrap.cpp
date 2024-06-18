@@ -1,9 +1,9 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(): ClapTrap() {
-    _hit_points = 100;
-    _energy_points = 100;
-    _attack_damage = 30;
+    FragTrap::_hit_points = 100;
+    FragTrap::_energy_points = 100;
+    FragTrap::_attack_damage = 30;
     std::cout << "FragTrap default constructor called" << std::endl;
 }
 
@@ -12,9 +12,9 @@ FragTrap::FragTrap(const FragTrap &copy): ClapTrap(copy) {
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(name){
-    _hit_points = 100;
-    _energy_points = 100;
-    _attack_damage = 30;
+    FragTrap::_hit_points = 100;
+    FragTrap::_energy_points = 100;
+    FragTrap::_attack_damage = 30;
     std::cout << "FragTrap " << name << " constructor called" << std::endl;
 }
 

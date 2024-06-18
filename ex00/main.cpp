@@ -4,7 +4,7 @@ int main() {
     // Creating ClapTrap instances
     ClapTrap a;
     ClapTrap b("Clappy");
-	ClapTrap c("Show off");
+	ClapTrap c("Showoff");
 	c = b;
 
     a.attack("Target A");
