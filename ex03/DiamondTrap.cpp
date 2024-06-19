@@ -1,8 +1,7 @@
 #include "DiamondTrap.hpp"
 
 // Default constructor
-DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name") {
-    this->_name = "default_Diamond";
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), _name("default"){
     FragTrap::_hit_points = 100;
     ScavTrap::_energy_points = 50;
     FragTrap::_attack_damage = 30;
@@ -18,8 +17,9 @@ DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name + "_clap_name")
 }
 
 // Copy constructor
-DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), FragTrap(copy), ScavTrap(copy), _name(copy._name) {
-    std::cout << "DiamondTrap copy constructor called" << std::endl;
+DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), FragTrap(copy), ScavTrap(copy) {
+    *this = copy;
+	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
 // Copy assignment operator
